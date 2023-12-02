@@ -35,6 +35,10 @@ jobs:
         virtualenvs-in-project: false
         installer-parallel: true
         
+    - name: Install dep
+      run: |
+            poetry install - no-root
+   
     - name: Poetry Test 
       run: |
             poetry run task test
