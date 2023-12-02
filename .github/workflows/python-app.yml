@@ -55,7 +55,7 @@ jobs:
       run: |
            poetry run task security   
     
-    - name: Test with pytest
+  
 
         
          
