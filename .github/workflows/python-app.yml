@@ -26,7 +26,7 @@ jobs:
          with:
             python-version: "3.10" 
 
-  job:
+  job2:
        needs: job1
        runs-on: ubuntu-latest   
        steps:
@@ -46,30 +46,30 @@ jobs:
              with:
               path: /home/runner/work/<path>/example-app/.venv
               key: ${{ runner.os }}-venv
-  job2:
+  job3:
       runs-on: ubuntu-latest
-      needs: job1
+      needs: job2
       steps:
         - name: Poetry Test 
           run: |
                poetry run task test
-  job3: 
+  job4: 
       runs-on: ubuntu-latest
-      needs: job2  
+      needs: job3  
       steps:
        - name: Poetry lint 
          run: |
               poetry run task lint 
-  job4:
+  job5:
       runs-on: ubuntu-latest
-      needs: job
+      needs: job4
       steps:
        - name: Poetry fromatter 
          run: |
               poetry run task formatter
-  job5:
+  job6:
       runs-on: ubuntu-latest
-      needs: job4 
+      needs: job5 
       steps:
       - name: Poetry security  
         run: |
