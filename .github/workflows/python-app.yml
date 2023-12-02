@@ -37,7 +37,7 @@ jobs:
         
     - name: Install dep
       run: |
-            poetry install - no-root
+            poetry install --no-root
    
     - name: Poetry Test 
       run: |
